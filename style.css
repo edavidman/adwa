@@ -1,0 +1,181 @@
+/*
+Theme Name: Adwa
+Author: E David Man
+Author URI: https://profiles.wordpress.org/edavidman/
+Description: Adwa is a lightweight Full Site Editing (FSE) block theme built for Gutenberg and the WordPress Site Editor. It features a token-based design system powered by theme.json, modern templates, block patterns, style variations, and flexible layout controls for creating blogs, portfolios, business websites, and e-commerce experiences.
+Requires at least: 6.6
+Tested up to: 7.0
+Requires PHP: 7.4
+Version: 1.0.2
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: adwa
+Domain Path: /languages
+Tags: full-site-editing, block-patterns, block-styles, style-variations, custom-colors, custom-logo, editor-style, featured-images, wide-blocks, translation-ready, blog, portfolio, e-commerce
+*/
+
+/*-------------------------------------------------------------- 
+
+# Base
+# This stylesheet intentionally remains minimal.
+# Most visual design is defined in theme.json.
+
+--------------------------------------------------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+.wp-element-button {
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--wp--custom--font-weight--medium);
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+:focus-visible {
+  outline: 2px solid var(--wp--preset--color--primary);
+  outline-offset: 2px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: none;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--wp--preset--color--contrast);
+  border-radius: 4px;
+  background-color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--contrast);
+  font-family: var(--wp--preset--font-family--system-font);
+  font-size: var(--wp--preset--font-size--medium);
+  line-height: var(--wp--custom--line-height--body);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+input[type="image"] {
+  width: auto;
+}
+
+/*--------------------------------------------------------------
+# Block enhancements
+# CSS that cannot be expressed effectively in theme.json.
+--------------------------------------------------------------*/
+
+:not(pre) > code {
+  padding: 2px 6px;
+  border: 1px solid var(--wp--preset--color--contrast);
+  border-radius: 2px;
+  background-color: var(--wp--preset--color--base);
+  font-size: var(--wp--preset--font-size--small);
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+.wp-block-navigation__responsive-container.is-menu-open {
+  padding: var(--wp--custom--spacing--gap);
+}
+
+.wp-block-navigation__responsive-container-open,
+.wp-block-navigation__responsive-container-close {
+  padding: 4px;
+  border: 1px solid currentColor;
+}
+
+.wp-block-navigation:not(.has-background) .wp-block-navigation__submenu-container {
+  padding: 10px;
+  background-color: var(--wp--preset--color--contrast);
+  color: var(--wp--preset--color--base);
+}
+
+.wp-block-navigation__submenu-container a {
+  color: inherit;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+.is-style-shadow-light {
+  box-shadow: var(--wp--preset--shadow--light);
+}
+
+.is-style-shadow-solid {
+  box-shadow: var(--wp--preset--shadow--solid);
+}
+
+/*--------------------------------------------------------------
+# Responsive utilities
+--------------------------------------------------------------*/
+
+@media (max-width: 782px) {
+  .is-style-columns-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+/*--------------------------------------------------------------
+# Reduced motion
+--------------------------------------------------------------*/
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
