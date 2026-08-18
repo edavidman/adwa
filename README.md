@@ -21,14 +21,14 @@ A lightweight WordPress block theme built for Full Site Editing (FSE), Gutenberg
 ## Installation
 
 1. Download the theme
-2. Upload to `/wp-content/themes/adwatheme`
+2. Upload to `/wp-content/themes/adwa`
 3. Activate through Appearance → Themes
 
 ## Development
 
 Clone repository:
 
-git clone https://github.com/edavidman/adwatheme.git
+git clone https://github.com/edavidman/adwa.git
 
 ## License
 
